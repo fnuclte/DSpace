@@ -1,28 +1,3 @@
-# EXAMPLE "local.cfg" for DSpace.
-#
-# Any configurations added to this file will automatically OVERRIDE configurations
-# of the same name in any of the DSpace *.cfg files. This includes overriding
-# settings in any of these files:
-#    * [dspace]/config/dspace.cfg
-#    * Any configuration file that is included in 'dspace.cfg'
-#     (See "include = [filepath]" settings near the end of dspace.cfg.
-#      By default, it includes all [dspace]/config/modules/*.cfg files)
-#    * Spring Boot's application.properties
-#      ([dspace-src]/dspace-server-webapp/src/main/resources/application.properties)
-#
-# By default, this EXAMPLE file includes a number of commonly overridden configurations.
-# * ADD configurations by simply copying them into this file from any existing *.cfg file.
-# * REMOVE configurations by simply commenting them out or deleting them below.
-#
-# Any commented out settings in this file are simply ignored. A configuration
-# will only override another configuration if it has the EXACT SAME key/name.
-# For example, including "dspace.dir" in this local.cfg will override the
-# default value of "dspace.dir" in the dspace.cfg file.
-# Similarly, including "oai.solr.url" in this local.cfg will override the
-# default value of "oai.solr.url" in the modules/oai.cfg file.
-#
-
-
 ##########################
 # SERVER CONFIGURATION   #
 ##########################
@@ -36,28 +11,28 @@ dspace.dir=/dspace
 # DO NOT end it with '/'.
 # This is where REST API and all enabled server modules (OAI-PMH, SWORD,
 # SWORDv2, RDF, etc) will respond.
-dspace.server.url = http://localhost:8080/server
+dspace.server.url = https://open.fnu.ac.fj/server
 
 # URL of DSpace frontend (Angular UI). Include port number etc.
 # DO NOT end it with '/'.
 # This is used by the backend to provide links in emails, RSS feeds, Sitemaps,
 # etc.
-dspace.ui.url = http://localhost:4000
+dspace.ui.url = https://open.fnu.ac.fj
 
 # Name of the site
-dspace.name = DSpace at My University
+dspace.name = FNU OER Repository
 
 # assetstore.dir, look at DSPACE/config/spring/api/bitstore.xml for more options
 # default is ${dspace.dir}/assetstore, uncomment and modify if you need to use a different path
 #assetstore.dir = ${dspace.dir}/assetstore
 
 # Default language for metadata values
-#default.language = en_US
+default.language = en_US
 
 # Solr server/webapp.
 # DSpace uses Solr for all search/browse capability (and for usage statistics).
 # Since DSpace 7, SOLR must be installed as a stand-alone service
-#solr.server = http://localhost:8983/solr
+solr.server = http://localhost:8983/solr
 
 ##########################
 # DATABASE CONFIGURATION #
@@ -81,7 +56,7 @@ db.dialect = org.dspace.storage.rdbms.hibernate.postgres.DSpacePostgreSQL82Diale
 
 # Database username and password
 db.username = dspace
-db.password = dspace
+db.password = ###
 
 # Database Schema name
 #    * For Postgres, this is often "public" (default schema)
@@ -108,14 +83,14 @@ db.schema = public
 #######################
 
 # SMTP mail server (allows DSpace to send email notifications)
-#mail.server = smtp.example.com
+mail.server = webmail.fnu.ac.fj
 
 # SMTP mail server authentication username and password (if required)
-#mail.server.username = myusername
-#mail.server.password = mypassword
+mail.server.username = fnuoer@fnu.ac.fj
+mail.server.password = ###
 
 # SMTP mail server alternate port (defaults to 25)
-#mail.server.port = 25
+mail.server.port = 25
 
 # From address for mail
 # All mail from the DSpace site will use this 'from' address
